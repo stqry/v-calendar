@@ -94,10 +94,8 @@ export default class Attribute {
   // Accepts: Day object
   // Returns: First attribute date info that occurs on given day.
   intersectsDay(day) {
-    return (
-      !this.excludesDay(day) &&
-      (this.dates.find(d => d.intersectsDay(day)) || false)
-    );
+    // Ticketure performance optimisation; Do not check excludesDay()
+    return this.dates.find(d => d.intersectsDay(day)) || false;
   }
 
   excludesDay(day) {
