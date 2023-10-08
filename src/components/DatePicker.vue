@@ -90,6 +90,7 @@ export default {
           maxDate: this.maxDateExact || this.maxDate,
           disabledDates: this.disabledDates,
           availableDates: this.availableDates,
+          tixDateIsDisabled: this.tixDateIsDisabled,
         },
         on: {
           ...this.$listeners,

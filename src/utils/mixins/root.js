@@ -20,6 +20,7 @@ export const rootMixin = {
     maxDateExact: null,
     disabledDates: null,
     availableDates: null,
+    tixDateIsDisabled: null,
     theme: null,
   },
   computed: {

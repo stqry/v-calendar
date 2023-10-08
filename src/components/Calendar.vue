@@ -618,8 +618,12 @@ export default {
     },
     refreshDisabledDays(pages) {
       this.getPageDays(pages).forEach(d => {
-        d.isDisabled =
-          !!this.disabledAttribute && this.disabledAttribute.intersectsDay(d);
+        if (this.tixDateIsDisabled) {
+          d.isDisabled = this.tixDateIsDisabled(d);
+        } else {
+          d.isDisabled =
+            !!this.disabledAttribute && this.disabledAttribute.intersectsDay(d);
+        }
       });
     },
     refreshFocusableDays(pages) {
